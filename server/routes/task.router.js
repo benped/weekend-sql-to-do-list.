@@ -50,5 +50,20 @@ router.put('/:id', (req,res)=>{
       })
 })
 
+// =============== DELETE ROW =====================
+router.delete('/:id', (req,res)=>{
+  let reqId = req.params.id;
+  console.log('Deleting row', reqId);
+  let queryText = ` DELETE FROM "tasks"
+  WHERE "id" = $1;`;
+  pool.query(queryText, [reqId])
+  .then( response => {
+    res.sendStatus(200);
+  }).catch( err => {
+    console.log('Error on Delete', err);
+    
+  })
+  
+})
 
 module.exports = router;
