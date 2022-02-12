@@ -11,7 +11,6 @@ function addClickHandlers(){
 }
 
 
-
 // Input a new Task
 function addTask(){
     console.log('Add Task clicked');
