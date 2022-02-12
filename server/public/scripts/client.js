@@ -88,23 +88,29 @@ function updateTask(){
 
       for (let task of tasks){
         if (task.done === false){
-          $('#toDoList').append(`<li class="task" data-id=${task.id}>
+          $('#toDoList').append(`
+          <div class="btn-group btn-lg btn-block task" data-id=${task.id} role="group" aria-label="Basic example">
+        
+          <button type="button" class="btn btn-secondary flip " value="notDone">
           ${task.name}
-          <button class="flip" value="notDone">${task.done}</button>
-          <button class="delete">Delete</button></li>`);
+          </button>
+          <button type="button" class="btn btn-secondary delete btn-danger">X</button></div>`);
         } else {
-            $('#doneList').append(`<li class="task" data-id=${task.id}>
+            $('#doneList').append(`
+            <div class="btn-group btn-lg btn-block task" data-id=${task.id} role="group" aria-label="Basic example">
+          
+            <button type="button" class="btn btn-secondary flip" value="Done" disabled>
             ${task.name}
-            <button class="flip" value="Done">${task.done}</button>
-            <button class="delete">Delete</button></li>`);
+            </button>
+            <button type="button" class="btn btn-secondary delete btn-danger">X</button></div>`);
         }
       }
   }
 
 // ============= Handle PopUp for Deleting a task ==============
 function clickDeleteTask(){
-    console.log('Delete Clicked', $(this).closest('li').data().id);
-    let deleteId = $(this).closest('li').data().id
+    console.log('Delete Clicked', $(this).closest('div').data().id);
+    let deleteId = $(this).closest('div').data().id
 
     Swal.fire({
         title: 'Are you sure?',
