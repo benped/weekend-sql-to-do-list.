@@ -6,9 +6,13 @@ $(document).ready(function(){
 
 function addClickHandlers(){
     $('#taskList').on('click','.flip',updateTask);
-    $('#taskList').on('click','.delete',deleteTask);
-
+    $('#taskList').on('click','.delete',clickDeleteTask);
+    $('#')
 }
+
+// Input a new Task
+
+
 
 // Flips tast to Done / Not Done ================ 
 
@@ -75,8 +79,43 @@ function updateTask(){
       }
   }
 
-// ============= Deletes a task ==============
-function deleteTask(){
+// ============= Handle PopUp for Deleting a task ==============
+function clickDeleteTask(){
     console.log('Delete Clicked', $(this).closest('li').data().id);
+    let deleteId = $(this).closest('li').data().id
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteTask(deleteId);
+          Swal.fire(
+            'Deleted!',
+            'Your task has been deleted.',
+            'success'
+          )
+          getTasks();
+        }
+      })
     
+}
+
+// ======== AJAX Method to DELETE ===== TAKES IN ID
+
+function deleteTask(queryId){
+    $.ajax({
+        method: 'Delete',
+        url: `/tasks/${queryId}`
+    }).then(function(response){
+        console.log('Deleted task');
+        
+    }).catch(function(err){
+        console.log('Error on Delete',err);
+    })
 }
