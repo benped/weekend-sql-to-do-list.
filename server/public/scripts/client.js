@@ -7,10 +7,33 @@ $(document).ready(function(){
 function addClickHandlers(){
     $('#taskList').on('click','.flip',updateTask);
     $('#taskList').on('click','.delete',clickDeleteTask);
-    $('#')
+    $('#submit').on('click',addTask);
 }
 
+
+
 // Input a new Task
+function addTask(){
+    console.log('Add Task clicked');
+    console.log($('#newTask').val());
+    let newTask = $('#newTask').val();
+
+    $.ajax({
+        method: 'post',
+        url: 'tasks',
+        data: {
+            name: newTask,
+            done: false
+        }
+        }).then(function(response){
+            console.log('Successful add');
+            getTasks();
+            $('#newTask').val('');
+        }).catch(function(err){
+            console.log('error on post',err);
+            
+        })
+    }
 
 
 
