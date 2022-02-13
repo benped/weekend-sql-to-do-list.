@@ -11,7 +11,7 @@ function addClickHandlers(){
 }
 
 
-// Input a new Task
+// Input a new Task ===================
 function addTask(){
     console.log('Add Task clicked');
     console.log($('#newTask').val());
@@ -41,10 +41,6 @@ function addTask(){
             
         })
     }
-
-
-
-
 
 // Flips tast to Done / Not Done ================ 
 
