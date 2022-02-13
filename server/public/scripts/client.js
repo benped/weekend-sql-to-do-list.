@@ -39,7 +39,7 @@ function addTask(){
 // Flips tast to Done / Not Done ================ 
 
 function updateTask(){
-    console.log('Flip Clicked', $(this).closest('li').data().id);
+    console.log('Flip Clicked', $(this).closest('div').data().id);
     let flip; 
 
     if ($(this).val() === 'notDone'){
@@ -49,7 +49,7 @@ function updateTask(){
     console.log('This is flip',flip);  
     console.log('This is not flip',!flip);
     
-    let queryId = $(this).closest('li').data().id;
+    let queryId = $(this).closest('div').data().id;
     $.ajax({
         method: 'Put',
         url: `/tasks/${queryId}`,
@@ -89,17 +89,21 @@ function updateTask(){
       for (let task of tasks){
         if (task.done === false){
           $('#toDoList').append(`
-          <div class="btn-group btn-lg btn-block task" data-id=${task.id} role="group" aria-label="Basic example">
+          <div class="btn-group btn-lg btn-block task
+          
+          " data-id=${task.id} role="group" aria-label="Basic example">
         
-          <button type="button" class="btn btn-secondary flip " value="notDone">
+          <button type="button" class="btn btn-primary flip " value="notDone">
           ${task.name}
           </button>
-          <button type="button" class="btn btn-secondary delete btn-danger">X</button></div>`);
+          <button type="button" class="btn btn-primary delete btn-danger">X</button></div>`);
         } else {
             $('#doneList').append(`
-            <div class="btn-group btn-lg btn-block task" data-id=${task.id} role="group" aria-label="Basic example">
+            <div class="btn-group btn-lg btn-block task
+            
+            " data-id=${task.id} role="group" aria-label="Basic example">
           
-            <button type="button" class="btn btn-secondary flip" value="Done" disabled>
+            <button type="button" class="btn btn-secondary flip" value="Done">
             ${task.name}
             </button>
             <button type="button" class="btn btn-secondary delete btn-danger">X</button></div>`);

@@ -2,6 +2,31 @@
     max-width: 2em;
     align-items: center;
     justify-content: center;
-    background-color: #dc354552;
-    border-color: #dc354552;
+    background-color: #ffffff52;
+    border-color: #ffffff52;
+}
+
+button {
+    opacity: .8;
+    height: 3em;
+    background-color: aliceblue;
+}
+
+body {
+    background-image: url('../Gradient_builder_2.jpeg');
+}
+
+.btn-secondary{
+    opacity: .4;
+    text-decoration: line-through;
+}
+
+.btn-primary{
+    background-color: #ffffff94;
+    border-color: #ffffff94;
+    color: black;
+    filter: drop-shadow(15px 15px 15px black);
+}
+.btn-primary:not(.delete):hover{
+    text-decoration: line-through;
 }
