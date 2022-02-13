@@ -1,9 +1,20 @@
-# Project Name
+# Task Manager CRUD App 
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
+This is a simple task list. You can add tasks, complete tasks (moves them to a done list) and delete tasks
 
-Your project description goes here. What problem did you solve? How did you solve it?
+## Technologies
+Node.js
+Express
+PostgreSQL
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+CSS
+Bootstrap
+
+JS
+JQuery
+Sweet Alerts 2
+
+## Instructions
+SQL setup is in the database.sql file. 
