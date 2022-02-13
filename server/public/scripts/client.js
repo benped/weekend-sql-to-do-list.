@@ -17,6 +17,14 @@ function addTask(){
     console.log($('#newTask').val());
     let newTask = $('#newTask').val();
 
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Task Added!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
     $.ajax({
         method: 'post',
         url: 'tasks',
@@ -33,6 +41,8 @@ function addTask(){
             
         })
     }
+
+
 
 
 
@@ -118,20 +128,20 @@ function clickDeleteTask(){
 
     Swal.fire({
         title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Delete Task'
       }).then((result) => {
         if (result.isConfirmed) {
           deleteTask(deleteId);
-          Swal.fire(
-            'Deleted!',
-            'Your task has been deleted.',
-            'success'
-          )
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Task Deleted',
+            showConfirmButton: false,
+            timer: 1000
+          })
           getTasks();
         }
       })
