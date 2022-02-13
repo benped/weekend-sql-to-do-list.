@@ -6,6 +6,11 @@
     border-color: #ffffff52;
 }
 
+
+ #logo {
+     max-width: 500px;
+ }
+
 button {
     opacity: .8;
     height: 3em;
@@ -39,10 +44,13 @@ footer {
 }
 
 h1 {
-    align-items: center;
-    padding-top: 2em;
+    text-align: center; 
     padding-bottom: 1em;
     color: whitesmoke;
     font-family: Apple Chancery, cursive;
+}
+
+#taskList {
+    padding-top: 4em;
 }
 

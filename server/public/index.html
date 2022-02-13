@@ -24,8 +24,10 @@
 </head>
 
 <body>
-    <img src="./images/taskm_clear.png" alt="Task Manger Logo" width="100%">
     <header class="container">
+        <div class="row">
+        <img class="col-md-3 offset-md-3" src="taskm_clear.png" alt="Task Manger Logo" id="logo" >
+        </div>
         <div class="row justify-content-center">
             <!-- <div class="col-6">
             <input type="text" placeholder="Task Name" id="newTask">
@@ -47,20 +49,23 @@
 
     <main class="container" id="taskList">
         <div class="row justify-content-center">
-            <h1>To Do</h1>
-            <div class="col-lg-6 ">
+            <h1 class="col-md-3 ">To Do</h1>
+            <div class="col-md-6 ">
 
                 <div id="toDoList">
 
                 </div>
             </div>
-            <h1>Done</h1>
-            <div class="col-lg-6 ">
-            <div id="doneList">
-            </div>
         </div>
-        </div>
-        </div>
+        <div class="row justify-content-center">
+            <h1 class="col-md-3">Done</h1>
+            
+            
+                <div class="col-md-6 ">
+                    <div id="doneList">
+                    </div>
+                </div>
+               
         </div>
     </main>
     <footer class="row justify-content-center">
